@@ -265,7 +265,8 @@ a=[2,4,6,5,3,1,7]
 merge_sort(a)
 
 
-# In[ ]:
+#參考資料：https://www.itread01.com/content/1550354967.html
+
 
 
 
