@@ -6,7 +6,6 @@
 
 from collections import defaultdict 
 
-#Class to represent a graph 
 class Graph(): 
 
     def __init__(self, vertices): 
@@ -16,11 +15,11 @@ class Graph():
                     for row in range(vertices)] 
         
     def addEdge(self,u,v,w):
-        self.graph.append([u,v,w]) # u:head v:next w:cost
+        self.graph.append([u,v,w]) 
         
     def Dijkstra(self, s):
-        visited = [False] * self.v #紀錄未走訪的點
-        dist = [99999] * self.v #預設所有邊為無限大
+        visited = [False] * self.v 
+        dist = [99999] * self.v 
         dist[s] = 0
         for i in range(self.v):
             m = self.find_min(dist,visited,i)
@@ -44,12 +43,12 @@ class Graph():
             
     def Kruskal(self):
         h=0
-        subset=set() #檢查是否迴圈用
+        subset=set() 
         MST=[]
-        self.graph =  sorted(self.graph,key=lambda item: item[2]) #排序
+        self.graph =  sorted(self.graph,key=lambda item: item[2]) 
         
         for m in self.graph:
-            t = set(m[:2]) #轉成set
+            t = set(m[:2]) 
             if t.issubset(subset) == False:
                 subset.update(m[:2])
                 MST.append(m)
